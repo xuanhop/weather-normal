@@ -30,19 +30,23 @@ search.addEventListener('change', function (e) {
 const api_key = 'ce4a0c92d75ac80f5a83ff2d8a4d8009';
 
 function callApi(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`).then(response => response.json())
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&lang=vi&units=metric`).then(response => response.json())
         .then(function (data) {
             var temperature = document.getElementById('temperature');
             var like = document.querySelector('#like');
             var min_temp = document.querySelector('#min_temp');
             var max_temp = document.querySelector('#max_temp');
             var icon_tt = document.querySelector('#icon-tt');
+            var description = document.querySelector('#description');
+            var wind = document.querySelector('#wind');
 
-            temperature.innerHTML = parseFloat(data.main.temp - 273.15).toFixed(2);
-            like.innerHTML = parseFloat(data.main.feels_like - 273.15).toFixed(2);
-            min_temp.innerHTML = parseFloat(data.main.temp_min - 273.15).toFixed(2);
-            max_temp.innerHTML = parseFloat(data.main.temp_max - 273.15).toFixed(2);
+            temperature.innerHTML = parseFloat(data.main.temp).toFixed(2);
+            like.innerHTML = parseFloat(data.main.feels_like).toFixed(2);
+            min_temp.innerHTML = parseFloat(data.main.temp_min).toFixed(2);
+            max_temp.innerHTML = parseFloat(data.main.temp_max).toFixed(2);
             icon_tt.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+            description.innerHTML = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+            wind.innerHTML = data.wind.speed
         }).catch(function (err) {
             console.log('fail to call api. Mess:' + err);
         })
@@ -52,11 +56,13 @@ setup();
 
 function setup() {
     var datetime = document.querySelector('#datetime');
-    var a = new google.translate.TranslateElement({pageLanguage: 'en'}, 'I love you');
-    console.log(a);
     var today = new Date();
     var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     datetime.innerHTML = date + ', ' + time;
 
+}
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'vn' }, 'I love you');
 }

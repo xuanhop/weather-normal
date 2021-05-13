@@ -36,7 +36,7 @@
                 </div>
                 <div class="row d-flex">
                     <div class="w-50">
-                        <p class="temparature" ><span id="temperature">26</span><span class="degree">°</span></p>
+                        <p class="temparature"><span id="temperature">26</span><span class="degree">°</span></p>
                         <!-- Thêm thông tin về nhiệt độ ở đây -->
                         <p class="more-info ">
                             Cảm thấy như <span id="like">25</span>
@@ -48,13 +48,16 @@
                         </p>
                     </div>
                     <div class="w-50">
-                        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="icon-weather" id="icon-tt" alt="Icon Thời tiết" srcset="">
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="icon-weather" id="icon-tt"
+                            alt="Icon Thời tiết" srcset="">
                         <!-- Thêm thông tin về thời tiết ở đây -->
-                        <p class="more-info" id="description">
-
+                        <p class="more-info" >
+                            <p id="description">Bình thường</p>
+                            <p>Tốc độ gió: <span id="wind"></span> m/s</p>
                         </p>
                     </div>
                 </div>
+                <div id="google_translate_element"></div>
             </div>
 
             <div id="Paris" class="tabcontent">
@@ -69,10 +72,6 @@
         </div>
     </div>
     <script src="js/all.min.js"></script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script> -->
     <script src="js/myscript.js"></script>
 </body>
 
