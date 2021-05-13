@@ -89,17 +89,18 @@
 /* Change background color of buttons on hover */
 
 .tab button:hover {
-    background-color: #b0d7f1;
-    border-bottom: 1px solid #ccc;
+    background-color: #6cb0e1;
+    /* border-bottom: 1px solid white; */
+    border-radius: 5px;
 
 }
 
 /* Create an active/current tablink class */
 
 .tab button.active {
-    background-color: #ccc;
-    border-bottom: 1px solid rgb(192, 31, 31);
-    
+    background-color: #6cb0e1;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
 }
 
 /* Style the tab content */
@@ -153,7 +154,7 @@
 
 .more-info {
     margin: 0 15px;
-    font-size: 2.5vh;
+    font-size: 2.5vh!important;
 }
 
 #like {
